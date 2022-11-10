@@ -1,7 +1,10 @@
 import tkinter 
 from tkinter import PhotoImage
 from PIL import Image,ImageTk
-import counting_fingers 
+import speech_recognition as sr
+from gtts import gTTS
+from playsound import playsound
+
 #----------------------- Funciones ----------------------
 def funcionOperacion():
     print("Me presionaste")
@@ -13,6 +16,10 @@ def abrirVentanaSuma():
     win.geometry("800x500")
     win.resizable(0,0)
     win.config(bg="blue violet")
+
+#---------------------- Declaraciones -------------------
+r = sr.Recognizer()
+
 #----------------------- Ventana ------------------------
 ventana = tkinter.Tk()
 ventana.title("Proyecto Number")
@@ -68,5 +75,10 @@ salir.place(x=355, y=350,width=90,height=90 )
 
 ventana.mainloop()
 
-
+tts = gTTS('Bienvenido', lang='es-us')
+tts.save('bienvenido.mp3')
+playsound('bienvenido.mp3')
+tts = gTTS('¿Qué acción quieres realizar?', lang='es-us')
+tts.save('accion.mp3')
+playsound('accion.mp3')
 
