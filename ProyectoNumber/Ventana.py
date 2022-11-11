@@ -13,7 +13,7 @@ def funcionOperacion():
     print("Me presionaste")
 
 def abrirVentanaSuma():
-    #ventana.withdraw()
+    ventana.withdraw()
     #win = tkinter.Tk()
     #win.title("Proyecto Number")
     #win.geometry("800x500")
