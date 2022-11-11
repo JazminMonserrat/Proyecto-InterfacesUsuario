@@ -6,17 +6,20 @@ import speech_recognition as sr
 from gtts import gTTS
 from playsound import playsound
 
+import counting_fingers as cf
+
 #----------------------- Funciones ----------------------
 def funcionOperacion():
     print("Me presionaste")
 
 def abrirVentanaSuma():
-    ventana.withdraw()
-    win = tkinter.Tk()
-    win.title("Proyecto Number")
-    win.geometry("800x500")
-    win.resizable(0,0)
-    win.config(bg="blue violet")
+    #ventana.withdraw()
+    #win = tkinter.Tk()
+    #win.title("Proyecto Number")
+    #win.geometry("800x500")
+    #win.resizable(0,0)
+    #win.config(bg="blue violet")
+    cf.abrirCamara()
 
 #---------------------- Declaraciones -------------------
 r = sr.Recognizer()
@@ -30,23 +33,23 @@ ventana.config(bg="blue violet")
 
 #----------------------- Imagenes ------------------------
 #SUMA
-imgSuma = Image.open('ProyectoNumber/suma.jpeg')
+imgSuma = Image.open('Proyecto-InterfacesUsuario/ProyectoNumber/suma.jpeg')
 imgSuma = imgSuma.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgSuma = ImageTk.PhotoImage(imgSuma)
 #RESTA
-imgResta = Image.open('ProyectoNumber/resta.jpeg')
+imgResta = Image.open('Proyecto-InterfacesUsuario/ProyectoNumber/resta.jpeg')
 imgResta = imgResta.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgResta = ImageTk.PhotoImage(imgResta)
 #MULTIPLICACION
-imgMulti = Image.open('ProyectoNumber/multi.jpeg')
+imgMulti = Image.open('Proyecto-InterfacesUsuario/ProyectoNumber/multi.jpeg')
 imgMulti = imgMulti.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgMulti = ImageTk.PhotoImage(imgMulti)
 #DIVICION
-imgDiv = Image.open('ProyectoNumber/div.jpeg')
+imgDiv = Image.open('Proyecto-InterfacesUsuario/ProyectoNumber/div.jpeg')
 imgDiv = imgDiv.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgDiv = ImageTk.PhotoImage(imgDiv)
 #SALIR
-imgSalir = Image.open('ProyectoNumber/salir.jpeg')
+imgSalir = Image.open('Proyecto-InterfacesUsuario/ProyectoNumber/salir.jpeg')
 imgSalir = imgSalir.resize((90, 90), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgSalir = ImageTk.PhotoImage(imgSalir)
 
