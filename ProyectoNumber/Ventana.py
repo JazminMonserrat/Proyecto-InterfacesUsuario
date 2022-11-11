@@ -5,18 +5,16 @@ from PIL import Image,ImageTk
 import speech_recognition as sr
 from gtts import gTTS
 from playsound import playsound
-
+import counting_fingers
 #----------------------- Funciones ----------------------
 def funcionOperacion():
     print("Me presionaste")
 
 def abrirVentanaSuma():
     #ventana.withdraw()
-    win = tkinter.Tk()
-    win.title("Proyecto Number")
-    win.geometry("800x500")
-    win.resizable(0,0)
-    win.config(bg="blue violet")
+    #execfile('counting_fingers.py')
+    exec(open('counting_fingers.py').read())
+
 
 #---------------------- Declaraciones -------------------
 r = sr.Recognizer()
