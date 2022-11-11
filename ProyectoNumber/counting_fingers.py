@@ -130,7 +130,7 @@ with mp_hands.Hands(
                 mp_drawing.draw_landmarks(
                     frame,
                     hand_landmarks,
-                    mp_hands.HAND_CONNECTION,
+                    mp_hands.HAND_CONNECTIONS,
                     mp_drawing_syles.get_default_hand_landmarks_style(),
                     mp_drawing_syles.get_default_hand_connections_style())
         
