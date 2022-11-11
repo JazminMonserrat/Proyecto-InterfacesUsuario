@@ -1,6 +1,7 @@
 import tkinter 
 from tkinter import PhotoImage
 from PIL import Image,ImageTk
+
 import speech_recognition as sr
 from gtts import gTTS
 from playsound import playsound
@@ -29,23 +30,23 @@ ventana.config(bg="blue violet")
 
 #----------------------- Imagenes ------------------------
 #SUMA
-imgSuma = Image.open('suma.jpeg')
+imgSuma = Image.open('ProyectoNumber/suma.jpeg')
 imgSuma = imgSuma.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgSuma = ImageTk.PhotoImage(imgSuma)
 #RESTA
-imgResta = Image.open('resta.jpeg')
+imgResta = Image.open('ProyectoNumber/resta.jpeg')
 imgResta = imgResta.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgResta = ImageTk.PhotoImage(imgResta)
 #MULTIPLICACION
-imgMulti = Image.open('multi.jpeg')
+imgMulti = Image.open('ProyectoNumber/multi.jpeg')
 imgMulti = imgMulti.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgMulti = ImageTk.PhotoImage(imgMulti)
 #DIVICION
-imgDiv = Image.open('div.jpeg')
+imgDiv = Image.open('ProyectoNumber/div.jpeg')
 imgDiv = imgDiv.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgDiv = ImageTk.PhotoImage(imgDiv)
 #SALIR
-imgSalir = Image.open('salir.jpeg')
+imgSalir = Image.open('ProyectoNumber/salir.jpeg')
 imgSalir = imgSalir.resize((90, 90), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgSalir = ImageTk.PhotoImage(imgSalir)
 
@@ -78,6 +79,7 @@ ventana.mainloop()
 tts = gTTS('Bienvenido', lang='es-us')
 tts.save('bienvenido.mp3')
 playsound('bienvenido.mp3')
+
 tts = gTTS('¿Qué acción quieres realizar?', lang='es-us')
 tts.save('accion.mp3')
 playsound('accion.mp3')
