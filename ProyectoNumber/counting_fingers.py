@@ -20,11 +20,17 @@ def abrirCamara():
 
     #Pulgar
     thumb_points = [1, 2, 4]
+    thumb_points2 =[1, 2, 4]
+
 
     #Indice, medio, anular y meñique
     palm_points = [0, 1, 2, 5, 9, 13, 17]
     fingertips_points = [8, 12, 16, 20]
     finger_base_points = [6, 10, 14, 18]
+
+    palm_points2 = [0, 1, 2, 5, 9, 13, 17]
+    fingertips_points2 = [8, 12, 16, 20]
+    finger_base_points2 = [6, 10, 14, 18]
 
     #Colores
     GREEN = (48,255,48)
@@ -60,10 +66,11 @@ def abrirCamara():
                 for hand_landmarks in results.multi_hand_landmarks:
 
                     for index in thumb_points:
+                       
                         x = int(hand_landmarks.landmark[index].x * width)
                         y = int(hand_landmarks.landmark[index].y * height)
                         coordinates_thumb.append([x, y])
-
+                      
 
                     for index in palm_points:
                         x = int(hand_landmarks.landmark[index].x * width)
@@ -81,9 +88,11 @@ def abrirCamara():
                         x = int(hand_landmarks.landmark[index].x * width)
                         y = int(hand_landmarks.landmark[index].y * height)
                         coordinates_fb.append([x, y])
-                        
+
+
+
                     ##############################
-                    #Pulgar
+                    #Pulgar1
                     p1 = np.array(coordinates_thumb[0])
                     p2 = np.array(coordinates_thumb[1])
                     p3 = np.array(coordinates_thumb[2])

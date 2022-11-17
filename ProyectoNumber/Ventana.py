@@ -2,27 +2,25 @@ import tkinter
 from tkinter import PhotoImage
 from PIL import Image,ImageTk
 
-import speech_recognition as sr
-from gtts import gTTS
-from playsound import playsound
+#import speech_recognition as sr
+#from gtts import gTTS
+#from playsound import playsound
 
 import counting_fingers as cf
-
+import Manos as cff
 #----------------------- Funciones ----------------------
 def funcionOperacion():
     print("Me presionaste")
 
+
 def abrirVentanaSuma():
     ventana.withdraw()
-    #win = tkinter.Tk()
-    #win.title("Proyecto Number")
-    #win.geometry("800x500")
-    #win.resizable(0,0)
-    #win.config(bg="blue violet")
-    cf.abrirCamara()
+    cff.abrirCamara()
+    
+    
 
 #---------------------- Declaraciones -------------------
-r = sr.Recognizer()
+#r = sr.Recognizer()
 
 #----------------------- Ventana ------------------------
 ventana = tkinter.Tk()
@@ -32,24 +30,25 @@ ventana.resizable(0,0)
 ventana.config(bg="blue violet")
 
 #----------------------- Imagenes ------------------------
+dir = 'C:/Users/Alex/Downloads/Proyecto-InterfacesUsuario/ProyectoNumber'
 #SUMA
-imgSuma = Image.open('Proyecto-InterfacesUsuario/ProyectoNumber/suma.jpeg')
+imgSuma = Image.open(dir+'/suma.jpeg')
 imgSuma = imgSuma.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgSuma = ImageTk.PhotoImage(imgSuma)
 #RESTA
-imgResta = Image.open('Proyecto-InterfacesUsuario/ProyectoNumber/resta.jpeg')
+imgResta = Image.open(dir+'/resta.jpeg')
 imgResta = imgResta.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgResta = ImageTk.PhotoImage(imgResta)
 #MULTIPLICACION
-imgMulti = Image.open('Proyecto-InterfacesUsuario/ProyectoNumber/multi.jpeg')
+imgMulti = Image.open(dir+'/multi.jpeg')
 imgMulti = imgMulti.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgMulti = ImageTk.PhotoImage(imgMulti)
 #DIVICION
-imgDiv = Image.open('Proyecto-InterfacesUsuario/ProyectoNumber/div.jpeg')
+imgDiv = Image.open(dir+'/div.jpeg')
 imgDiv = imgDiv.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgDiv = ImageTk.PhotoImage(imgDiv)
 #SALIR
-imgSalir = Image.open('Proyecto-InterfacesUsuario/ProyectoNumber/salir.jpeg')
+imgSalir = Image.open(dir+'/salir.jpeg')
 imgSalir = imgSalir.resize((90, 90), Image.ANTIALIAS) # Redimension (Alto, Ancho)
 imgSalir = ImageTk.PhotoImage(imgSalir)
 
@@ -63,13 +62,13 @@ c2.place(x=150, y=100,width=500,height=25 )
 bS = tkinter.Button(ventana, image=imgSuma, fg = "black",bg ="green", command= abrirVentanaSuma)
 bS.place(x=100, y=200,width=100,height=100 )
 
-bR = tkinter.Button(ventana, image=imgResta, fg = "black",bg ="green", command= funcionOperacion)
+bR = tkinter.Button(ventana, image=imgResta, fg = "black",bg ="green", command= abrirVentanaSuma)
 bR.place(x=270, y=200,width=100,height=100 )
 
-bM = tkinter.Button(ventana, image=imgMulti, fg = "black",bg ="green", command= funcionOperacion)
+bM = tkinter.Button(ventana, image=imgMulti, fg = "black",bg ="green", command= abrirVentanaSuma)
 bM.place(x=435, y=200,width=100,height=100 )
 
-bD = tkinter.Button(ventana, image=imgDiv, fg = "black",bg ="green", command= funcionOperacion)
+bD = tkinter.Button(ventana, image=imgDiv, fg = "black",bg ="green", command= abrirVentanaSuma)
 bD.place(x=600, y=200,width=100,height=100 )
 
 salir = tkinter.Button(ventana, image=imgSalir)
@@ -79,11 +78,11 @@ salir.place(x=355, y=350,width=90,height=90 )
 
 ventana.mainloop()
 
-tts = gTTS('Bienvenido', lang='es-us')
-tts.save('bienvenido.mp3')
-playsound('bienvenido.mp3')
+#tts = gTTS('Bienvenido', lang='es-us')
+#tts.save('bienvenido.mp3')
+#playsound('bienvenido.mp3')
 
-tts = gTTS('¿Qué acción quieres realizar?', lang='es-us')
-tts.save('accion.mp3')
-playsound('accion.mp3')
+#tts = gTTS('¿Qué acción quieres realizar?', lang='es-us')
+#tts.save('accion.mp3')
+#playsound('accion.mp3')
 
