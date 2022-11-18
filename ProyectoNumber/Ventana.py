@@ -15,9 +15,39 @@ def funcionOperacion():
 
 def abrirVentanaSuma():
     ventana.withdraw()
-    cff.abrirCamara()
+    number1=cff.abrirCamara()
+    print(str(number1))
+    number2=cff.abrirCamara()
+    print(str(number2))
+    print(str(number1+number2))
     
     
+def abrirVentanaResta():
+    ventana.withdraw()
+    number1=cff.abrirCamara()
+    print(str(number1))
+    number2=cff.abrirCamara()
+    print(str(number2))
+    print(str(number1-number2))
+    
+
+def abrirVentanaMul():
+    ventana.withdraw()
+    number1=cff.abrirCamara()
+    print(str(number1))
+    number2=cff.abrirCamara()
+    print(str(number2))
+    print(str(number1*number2))
+    
+
+def abrirVentanaDiv():
+    ventana.withdraw()
+    number1=cff.abrirCamara()
+    print(str(number1))
+    number2=cff.abrirCamara()
+    print(str(number2))
+    print(str(number1/number2))
+   
 
 #---------------------- Declaraciones -------------------
 #r = sr.Recognizer()
@@ -30,7 +60,7 @@ ventana.resizable(0,0)
 ventana.config(bg="blue violet")
 
 #----------------------- Imagenes ------------------------
-dir = 'C:/Users/Alex/Downloads/Proyecto-InterfacesUsuario/ProyectoNumber'
+dir = 'C:/Users/Diana Cristino/Desktop/PROYECTO-V3/Proyecto-InterfacesUsuario/ProyectoNumber'
 #SUMA
 imgSuma = Image.open(dir+'/suma.jpeg')
 imgSuma = imgSuma.resize((100, 100), Image.ANTIALIAS) # Redimension (Alto, Ancho)
@@ -62,13 +92,13 @@ c2.place(x=150, y=100,width=500,height=25 )
 bS = tkinter.Button(ventana, image=imgSuma, fg = "black",bg ="green", command= abrirVentanaSuma)
 bS.place(x=100, y=200,width=100,height=100 )
 
-bR = tkinter.Button(ventana, image=imgResta, fg = "black",bg ="green", command= abrirVentanaSuma)
+bR = tkinter.Button(ventana, image=imgResta, fg = "black",bg ="green", command= abrirVentanaResta)
 bR.place(x=270, y=200,width=100,height=100 )
 
-bM = tkinter.Button(ventana, image=imgMulti, fg = "black",bg ="green", command= abrirVentanaSuma)
+bM = tkinter.Button(ventana, image=imgMulti, fg = "black",bg ="green", command= abrirVentanaMul)
 bM.place(x=435, y=200,width=100,height=100 )
 
-bD = tkinter.Button(ventana, image=imgDiv, fg = "black",bg ="green", command= abrirVentanaSuma)
+bD = tkinter.Button(ventana, image=imgDiv, fg = "black",bg ="green", command= abrirVentanaDiv)
 bD.place(x=600, y=200,width=100,height=100 )
 
 salir = tkinter.Button(ventana, image=imgSalir)

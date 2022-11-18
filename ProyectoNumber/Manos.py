@@ -101,6 +101,9 @@ def abrirCamara():
         #break
       if cv2.waitKey(5) & 0xFF == 27:
         break
-  cap.release()
   
+  cap.release()
+  cv2.destroyAllWindows()
+  return fingerCount
+
 
