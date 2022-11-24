@@ -1,17 +1,19 @@
 import cv2
 import mediapipe as mp
-import  time
+#import  datetime as dt
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_hands = mp.solutions.hands
 
-timeout  =  time.time( )  + 10
 
+#timeout  =  time.time( )  + 10
+#tiempoA = dt.datetime.now()
+con = 0
 def abrirCamara():
-
-
-  
+  mp_drawing = mp.solutions.drawing_utils
+  mp_drawing_styles = mp.solutions.drawing_styles
+  mp_hands = mp.solutions.hands
 #Colores
   GREEN = (48,255,48)
   BLUE = (192,101,21)
@@ -32,26 +34,26 @@ def abrirCamara():
     
       if not success:
         print("Ignoring empty camera frame.")
-      # If loading a video, use 'break' instead of 'continue'.
+        # If loading a video, use 'break' instead of 'continue'.
         continue
 
-    # To improve performance, optionally mark the image as not writeable to
-    # pass by reference.
+      # To improve performance, optionally mark the image as not writeable to
+      # pass by reference.
       image.flags.writeable = False
       image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
       results = hands.process(image)
 
-    # Draw the hand annotations on the image.
+      # Draw the hand annotations on the image.
       image.flags.writeable = True
       image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
-    # Initially set finger count to 0 for each cap
+      # Initially set finger count to 0 for each cap
       fingerCount = 0
 
       if results.multi_hand_landmarks:
 
         for hand_landmarks in results.multi_hand_landmarks:
-        # Get hand index to check label (left or right)
+          # Get hand index to check label (left or right)
           handIndex = results.multi_hand_landmarks.index(hand_landmarks)
           handLabel = results.multi_handedness[handIndex].classification[0].label
 
@@ -94,14 +96,19 @@ def abrirCamara():
                #Visualizacion 
       cv2.rectangle(image, (0,0), (80,80), (125, 220, 0), -1)
       cv2.putText(image, str(fingerCount), (15,65), 1, 3, (255,255,255), 2)
-      cv2.imshow('MediaPipe Hands', image)
+      cv2.imshow('Proyecto Number', image)
 
+      
       
       #if time.time() < timeout:
         #break
       if cv2.waitKey(5) & 0xFF == 27:
         break
-  
+      #cv2.after(20000)
+
+  #cap.release()
+  #cv2.after(3000)
+  #cv2.destroyAllWindows()
   cap.release()
   cv2.destroyAllWindows()
   return fingerCount
